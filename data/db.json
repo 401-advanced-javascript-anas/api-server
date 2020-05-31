@@ -1,23 +1,170 @@
 {
-  "categories": [
-    {
-      "id": "1",
-      "name": "phones",
-      "display_name": "Iphone XR",
-      "description": " My Phone"
-    },
-    {
-      "name": "anas",
-      "id": "z9V3r3P"
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "defaultTitle",
+    "description" : "defaultDescription",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:3000"
+  } ],
+  "paths" : {
+    "/categories" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "put" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "id" : {
+                    "type" : "string"
+                  },
+                  "display_name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n    \"name\": \"anas\"\n}"
+                },
+                "1" : {
+                  "value" : "{\n    \"id\": \"2\",\n      \"name\": \"phone 2\",\n      \"display_name\": \"Iphone XMAX\",\n      \"description\": \"AN apple brand phone\"\n}\n"
+                },
+                "2" : {
+                  "value" : "{\n    \"id\": \"2\",\n      \"name\": \"phone 2\",\n      \"display_name\": \"Iphone XMAX\",\n      \"description\": \"AN apple brand phone\"\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "404" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "id" : {
+                    "type" : "string"
+                  },
+                  "display_name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n    \"name\": \"anas\"\n}"
+                },
+                "1" : {
+                  "value" : "{\n    \"id\": \"2\",\n      \"name\": \"phone 2\",\n      \"display_name\": \"Iphone XMAX\",\n      \"description\": \"AN apple brand phone\"\n}\n"
+                },
+                "2" : {
+                  "value" : "{\n    \"id\": \"2\",\n      \"name\": \"phone 2\",\n      \"display_name\": \"Iphone XMAX\",\n      \"description\": \"AN apple brand phone\"\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "delete" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "%22name%22",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "%22phones%22"
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost:3000"
+      } ]
     }
-  ],
-  "products": [
-    {
-      "id": "1",
-      "category": "Console",
-      "name": "PlayStation",
-      "display_name": "Ps5",
-      "description": "The newly announced PlayStation console"
-    }
-  ]
+  }
 }
