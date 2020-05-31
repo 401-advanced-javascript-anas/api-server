@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "phones",
+      "display_name": "Iphone XR",
+      "description": " My Phone"
+    },
+    {
+      "name": "anas",
+      "id": "z9V3r3P"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "Console",
+      "name": "PlayStation",
+      "display_name": "Ps5",
+      "description": "The newly announced PlayStation console"
+    }
+  ]
+}
