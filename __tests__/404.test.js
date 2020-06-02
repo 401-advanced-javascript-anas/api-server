@@ -1,8 +1,8 @@
 'use strict';
-const notFoundHandler = require('../lib/middleware/404');
+const {server} = require('../lib/server.js');
 
 const supertest = require('supertest');
-const mockRequest = supertest(notFoundHandler);
+const mockRequest = supertest(server);
 
 describe('404 not found', ()=>{
     

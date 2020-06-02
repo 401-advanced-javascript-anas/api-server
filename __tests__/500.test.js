@@ -1,8 +1,8 @@
 'use strict';
-const errorHandler = require('../lib/middleware/500');
+const {server} = require('../lib/server');
 
 const supertest = require('supertest');
-const mockRequest = supertest(errorHandler);
+const mockRequest = supertest(server);
 
 describe('error handling', () => {
   it('should respond with 500', ()=> {
