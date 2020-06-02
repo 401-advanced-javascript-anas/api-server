@@ -1,15 +1,26 @@
 'use strict';
-const {server} = require('../lib/server');
 
-const supertest = require('supertest');
-const mockRequest = supertest(server);
+const {server} = require('../lib/server.js');
 
-describe('error handling', () => {
-  it('should respond with 500', ()=> {
-        
-    return mockRequest.get('/bad')
-      .then(results=> {
-        expect(results.status).toBe(500);
-      }).catch(console.error);
+const supergoose = require('@code-fellows/supergoose');
+
+const mockServer = supergoose(server);
+
+
+describe('error handler',()=>{
+  it('it should response with status 500',()=>{
+    return mockServer.post('/api/v1/categories')
+      .send({})
+      .then((result)=>{
+        expect(result.status).toBe(500);
+      }).catch(e=>{});
+  });
+
+  it('it should response with status 500',()=>{
+    return mockServer.post('/api/v1/products')
+      .send({})
+      .then((result)=>{
+        expect(result.status).toBe(500);
+      }).catch(e=>{});
   });
 });

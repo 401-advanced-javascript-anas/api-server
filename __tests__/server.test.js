@@ -1,102 +1,100 @@
 'use strict';
 
-const {server} = require('../lib/server');
+const supergoose = require('@code-fellows/supergoose');
+const { server } = require('../lib/server');
+const mockRequest = supergoose(server);
 
-const supertest = require('supertest');
-const mockRequest = supertest(server);
 
+describe('server API', ()=> {
 
-describe('web server',()=>{
+  it('it can get() ', ()=> {
+    let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
+    return mockRequest
+      .post('/api/v1/products')
+      .send(obj)
+      .then(data => {
+        
+        return mockRequest.get('/api/v1/products')
+          .then(result => {
+           
+            Object.keys(obj).forEach(key=> {
+              expect(result.body[0][key]).toEqual(obj[key]);
+            });
+          });
+      });
+  });
+
+  it('can post() a new food ', ()=> {
+    let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
+    return mockRequest
+      .post('/api/v1/products')
+      .send(obj)
+      .then(data => {
+       
+        expect(data.status).toBe(201);
+        Object.keys(obj).forEach(key => {
+          expect(data.body[key]).toEqual(obj[key]);
+        });
+      });
+  });
+
+  it('TEST post() failure ', ()=> {
+    let obj = {name: 'test-post-1'};
+    return mockRequest
+      .post('/api/v1/products')
+      .send(obj)
+      .then(data => {
  
-  it('should respond', ()=> {
-    return mockRequest
-      .get('/products')
-      .then(results => {
-        expect(results.status).toBe(200);
-      });
-  });
-    
-  it('should get products', ()=> {
-    return mockRequest
-      .get('/products/1')
-      .then(results => {
-        expect(results.status).toBe(200);
-      });
-  });
-    
-  it('should post products', ()=> {
-    return mockRequest
-      .post('/products')
-      .send('posted')
-      .then(results => {
-        expect(results.status).toBe(200);
+        expect(data.status).toBe(500);
       });
   });
 
-  it('should update products', ()=> {
+
+
+
+  it('it can get() ', ()=> {
+    let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
     return mockRequest
-      .put('/products/1')
-      .send('updated')
-      .then(results => {
-        expect(results.status).toBe(200);
+      .post('/api/v1/categories')
+      .send(obj)
+      .then(data => {
+        
+        return mockRequest.get('/api/v1/categories')
+          .then(result => {
+           
+            Object.keys(obj).forEach(key=> {
+              expect(result.body[0][key]).toEqual(obj[key]);
+            });
+          });
       });
   });
-    
-    
-  it('should delete data', ()=> {
+
+  it('can post() a new food ', ()=> {
+    let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
     return mockRequest
-      .delete('/products/1')
-      .send('deleted')
-      .then(results => {
-        expect(results.status).toBe(200);
+      .post('/api/v1/categories')
+      .send(obj)
+      .then(data => {
+       
+        expect(data.status).toBe(201);
+        Object.keys(obj).forEach(key => {
+          expect(data.body[key]).toEqual(obj[key]);
+        });
       });
   });
-    
-});
-    
 
-     
-it('should respond', ()=> {
-  return mockRequest
-    .get('/categories')
-    .then(results => {
-      expect(results.status).toBe(200);
-    });
-});
-      
-it('should get categories', ()=> {
-  return mockRequest
-    .get('/categories/1')
-    .then(results => {
-      expect(results.status).toBe(200);
-    });
-});
-      
-it('should post categories', ()=> {
-  return mockRequest
-    .post('/categories')
-    .send('posted')
-    .then(results => {
-      expect(results.status).toBe(200);
-    });
-});
-      
-it('should update categories', ()=> {
-  return mockRequest
-    .put('/categories/1')
-    .send('updated')
-    .then(results => {
-      expect(results.status).toBe(200);
-    });
-});
-      
-it('should delete categories', ()=> {
-  return mockRequest
-    .delete('/categories/1')
-    .send('deleted')
-    .then(results => {
-      expect(results.status).toBe(200);
-    });
-});
-    
+  it('TEST post() failure ', ()=> {
+    let obj = {name: 'test-post-1'};
+    return mockRequest
+      .post('/api/v1/categories')
+      .send(obj)
+      .then(data => {
+ 
+        expect(data.status).toBe(500);
+      });
+  });
 
+  
+
+
+});
