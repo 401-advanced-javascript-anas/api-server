@@ -1,5 +1,5 @@
 # api-server
-# LAB - Class 07
+# LAB - Class 09
 
 ## Project: api server
 
@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/401-advanced-javascript-anas/api-server/pull/3)
+- [submission PR](https://github.com/401-advanced-javascript-anas/api-server/pull/4)
 - [Heroku]()
 
 
@@ -24,6 +24,7 @@
 #### How to initialize/run your application 
 
 - `node index.js`
+- `nodemon`
 
 #### How to use your library 
 #### Tests
