@@ -1,25 +1,32 @@
 'use strict';
 require('@code-fellows/supergoose');
-const products = require('../lib/models/products-model');
+const products = require('../lib/models/products/products-model');
 
 
 const obj = {
-  'category': 'electronics',
-  'name': 'light',
-  'display_name': 'light',
-  'description': 'light'};
+  'name': 'anas',
+  'display_name': 'zain',
+  'description': 'syrian',
+};
+
 const obj2 = {
-  'category': 'electronics',
-  'name': 'mouse',
-  'display_name': 'mouse',
-  'description': 'mouse'};
+  'name': 'anas2',
+  'display_name': 'zain2',
+  'description': 'syrian2',
+};
+
+
+
 describe('products Model', () => {
-  it('create', () => {
-    return products.create(obj).then((result) => {
-      Object.keys(obj).forEach((key) => {
-        expect(result[key]).toEqual(obj[key]);
+
+  it('post', () => {
+    return products
+      .post(obj)
+      .then((result) => {
+        Object.keys(obj).forEach((key) => {
+          expect(result[key]).toEqual(obj[key]);
+        });
       });
-    });
   });
   it('get', () => {
     return products.get().then((result) => {
