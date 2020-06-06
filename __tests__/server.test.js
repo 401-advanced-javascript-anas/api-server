@@ -24,7 +24,7 @@ describe('server API', ()=> {
       });
   });
 
-  it('can post() a new food ', ()=> {
+  it('can post()  ', ()=> {
     let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
     return mockRequest
       .post('/api/v1/products')
@@ -52,33 +52,32 @@ describe('server API', ()=> {
 
 
 
-  it('it can get() ', ()=> {
-    let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
-    return mockRequest
-      .post('/api/v1/categories')
-      .send(obj)
-      .then(data => {
+  // it('it can get() ', ()=> {
+  //   let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
+  //   return mockRequest
+  //     .post('/api/v1/categories')
+  //     .send(obj)
+  //     .then(data => {
         
-        return mockRequest.get('/api/v1/categories')
-          .then(result => {
+  //       return mockRequest.get('/api/v1/categories')
+  //         .then(result => {
            
-            Object.keys(obj).forEach(key=> {
-              expect(result.body[0][key]).toEqual(obj[key]);
-            });
-          });
-      });
-  });
+  //           Object.keys(obj).forEach(key=> {
+  //             expect(result.body[0][key]).toEqual(obj[key]);
+  //           });
+  //         });
+  //     });
+  // });
 
-  it('can post() a new food ', ()=> {
+  it('post()', () => {
     let obj = {name: 'test-post-2', display_name: 'anas', description: 'zain'};
     return mockRequest
-      .post('/api/v1/categories')
+      .post('/api/v1/products')
       .send(obj)
-      .then(data => {
-       
-        expect(data.status).toBe(201);
-        Object.keys(obj).forEach(key => {
-          expect(data.body[key]).toEqual(obj[key]);
+      .then((data) => {
+        const record = data.body;
+        Object.keys(obj).forEach((key) => {
+          expect(record[key]).toEqual(obj[key]);
         });
       });
   });
