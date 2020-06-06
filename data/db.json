@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "phones",
+      "display_name": "Iphone XR",
+      "description": " My Phone"
+    },
+    {
+      "name": "anas",
+      "id": "z9V3r3P"
+    },
+    {
+      "name": "phones",
+      "display_name": "Iphone XMAX",
+      "description": " new phone",
+      "id": "j3pOSG9"
+    },
+    {
+      "name": "anas2",
+      "id": "OX00RgH"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "Console",
+      "name": "PlayStation",
+      "display_name": "Ps5",
+      "description": "The newly announced PlayStation console"
+    }
+  ]
+}
