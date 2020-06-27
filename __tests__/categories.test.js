@@ -43,7 +43,7 @@ describe('categories Model', () => {
       .then((result) => {
         const id = result[0]._id;
         return categories
-          .update(id,obj2)
+          .put(id,obj2)
           .then((result) => {
             Object.keys(obj2).forEach((key) => {
               expect(result[key]).toEqual(obj2[key]);
